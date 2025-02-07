@@ -3,6 +3,7 @@ package edu.tcu.cs.hogwarts_artifacts_online.artifact.converter;
 import edu.tcu.cs.hogwarts_artifacts_online.artifact.Artifact;
 import edu.tcu.cs.hogwarts_artifacts_online.artifact.dto.ArtifactDto;
 import edu.tcu.cs.hogwarts_artifacts_online.wizard.converter.WizardToWizardDtoConverter;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class ArtifactToArtifactDtoConverter implements Converter<Artifact, ArtifactDto> {
     private final WizardToWizardDtoConverter wizardToWizardDtoConverter;
 
-    public ArtifactToArtifactDtoConverter(WizardToWizardDtoConverter wizardToWizardDtoConverter) {
+    public ArtifactToArtifactDtoConverter(@Lazy WizardToWizardDtoConverter wizardToWizardDtoConverter) {
         this.wizardToWizardDtoConverter = wizardToWizardDtoConverter;
     }
 
