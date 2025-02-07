@@ -1,6 +1,6 @@
 package edu.tcu.cs.hogwarts_artifacts_online.artifact;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.tcu.cs.hogwarts_artifacts_online.artifact.dto.ArtifactDto;
 import edu.tcu.cs.hogwarts_artifacts_online.system.StatusCode;
@@ -8,7 +8,7 @@ import org.hamcrest.Matchers;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
+
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -22,9 +22,7 @@ import static org.mockito.Mockito.doNothing;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.doThrow;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -42,7 +40,7 @@ class ArtifactControllerTest {
     ObjectMapper objectMapper;
     List<Artifact> artifacts;
     @BeforeEach
-    void setUp() {
+    void setUp() throws Exception{
         this.artifacts = new ArrayList<>();
 
         Artifact a1 = new Artifact();
