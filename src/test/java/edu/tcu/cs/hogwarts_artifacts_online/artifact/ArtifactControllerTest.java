@@ -237,7 +237,7 @@ class ArtifactControllerTest {
                 .andExpect(jsonPath("$.data").isEmpty());
     }
     @Test
-    void testDeleteArtifactErrorWithNonExistenId() throws Exception {
+    void testDeleteArtifactErrorWithNonExistentId() throws Exception {
         //Given
         doThrow(new ArtifactNotFoundException("1250808601744904191")).when(this.artifactService).delete("1250808601744904191");
         //When and Then
